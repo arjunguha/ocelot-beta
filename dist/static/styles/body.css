@@ -1,0 +1,37 @@
+html, body {
+    overflow: hidden;
+}
+
+div .SplitPane {
+    overflow: visible !important;
+    /* 
+    I didn't want to do this but
+    react-split-pane style each of their pane
+    and splitpane with inline style, I couldn't override
+    them even with high specificity, so I had to do this.
+    The reason I had to make overflow visible is because
+    monaco editor hover messages could potentially get cut
+    off if overflow is set to hidden for splitpane
+     */
+}
+
+#userEmail {
+    display: none;
+}
+
+#toolbar-buttons-text {
+    display: none;
+}
+
+
+@media screen and (min-width: 1160px) { /* display inline when >= 1160 px in width */
+    #userEmail {
+        display: inline;
+    }
+}
+
+@media screen and (min-width: 885px) {
+    #toolbar-buttons-text {
+        display: inline;
+    }
+}
